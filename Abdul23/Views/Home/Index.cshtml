@@ -1,0 +1,35 @@
+﻿@* @model Abdul23.Models.Employee   //ye jo hai wo ab strongly typed view ban chuka hai 
+           //hum ne is view ko strongly typed kar diya hai model class  ke sath 
+           //yha viewdata ya tempdata ki tarah object nahi banta hai  *@
+
+@* @model List<Abdul23.Models.Employee>   //ya to hum puri class ko list ke ander rakh do 
+//ya is ka aik aur way hai given below  *@
+
+ @model IEnumerable<Abdul23.Models.Employee>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@{
+    foreach (var item in Model)
+    {
+        <h2>@item.EmpId</h2>
+        <h2>@item.EmpName</h2>
+        <h2>@item.Designation</h2>
+        <h2>@item.Salary</h2>
+        <p>------------------</p>
+    }
+}
+
+
+
+@* <h2>@Model.EmpId</h2>
+<h2>@Model.EmpName</h2>
+<h2>@Model.Designation</h2>
+<h2>@Model.Salary</h2> *@
